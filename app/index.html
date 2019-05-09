@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ="shuffleApp">
+  <head>
+    <title>ShuffleApp</title>
+    <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>﻿
+    <script src="shuffle.js"></script>﻿
+  </head>
+  <body>
+    <div ng-controller = "shuffleController">
+      {{"Playlist size: " + songs.length}}
+      <input type = "text" placeholder = "Search" ng-model = "search">
+      <button ng-click = "shuffleSongsStandard(order)">Shuffle</button>
+      <button ng-click = "order = 'name'">Un-Shuffle</button>
+      <ul>
+        <li ng-repeat = "song in songs | orderBy: order | filter: search">
+          {{song.artist + " - " + song.name}}
+          <div class = "remove" ng-click = ""></div>
+        </li>
+      </ul>
+      <form ng-submit="addSong()">
+        <input type = "text" placeholder = "artist" ng-model = "newsong.artist" formenctype=""/>
+        <input type = "text" placeholder = "song title" ng-model = "newsong.name"/>
+        <input type = "submit" value = "Add Song" />
+    </div>
+  </body>
+</html>
