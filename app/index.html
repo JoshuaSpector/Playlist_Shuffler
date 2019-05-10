@@ -10,7 +10,7 @@
     <div ng-controller = "shuffleController">
       {{"Playlist size: " + songs.length}}
       <input type = "text" placeholder = "Search" ng-model = "search">
-      <button ng-click = "shuffleSongsStandard(); order = 'id'">Shuffle</button>
+      <button ng-click = "shuffleSongsStandard(songs); order = 'id'">Shuffle</button>
       <button ng-click = "order = 'name'">Un-Shuffle</button>
       <ul>
         <li ng-repeat = "song in songs | orderBy: order | filter: search">

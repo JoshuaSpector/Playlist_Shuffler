@@ -18,13 +18,18 @@ shuffleApp.controller('shuffleController', ['$scope', function($scope){
     $scope.newsong.artist = ""
   };
 
-  $scope.shuffleSongsStandard = function(order){
-    angular.forEach($scope.songs, function(song, id){
-      var arrayLength = $scope.songs.length
-      var randomInteger = Math.floor(Math.random() * 4);
-      song.id = randomInteger
-
-    });
+  $scope.shuffleSongsStandard = function(songs){
+     angular.forEach($scope.songs, function(song, id){
+     var ids = [];
+      while(ids.length < songs.length){
+          var randomNumber = Math.floor(Math.random()*songs.length);
+          if(ids.indexOf(randomNumber) === -1) ids.push(randomNumber);
+      }
+      for (var i = 0; i<songs.length; i++)
+      {
+        songs[i].id = ids[i];
+    }
+  })
   };
 
 $scope.songs = [
@@ -36,7 +41,19 @@ $scope.songs = [
   artist: "Led Zeppelin"},
   {id: 1,
   name: "Iron Man",
-  artist: "Black Sabbath"}
+  artist: "Black Sabbath"},
+  {id: 4,
+  name: "Timeless",
+  artist: "Goldie"},
+  {id: 5,
+  name: "Buffalo Soldier",
+  artist: "Bob Marley"},
+  {id: 6,
+  name: "Free Bird",
+  artist: "Lynyrd Skynyrd"},
+  {id: 7,
+  name: "So What",
+  artist: "Miles Davis"}
 ];
 
 
