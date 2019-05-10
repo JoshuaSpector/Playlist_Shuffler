@@ -21,9 +21,9 @@ shuffleApp.controller('shuffleController', ['$scope', function($scope){
   $scope.shuffleSongsStandard = function(order){
     angular.forEach($scope.songs, function(song, id){
       var arrayLength = $scope.songs.length
-      var randomInteger = Math.floor(Math.random * Math.floor(4));
+      var randomInteger = Math.floor(Math.random() * 4);
       song.id = randomInteger
-      order 'id'
+
     });
   };
 
