@@ -1,0 +1,27 @@
+/*Font courtesy of  Google fonts
+https://fonts.google.com/specimen/VT323 */
+
+@import url(https://fonts.googleapis.com/css?family=VT323);
+body{
+  font-family: VT323;
+  font-size: 200%;
+  background-color: black;
+  color: green;
+}
+ul{
+  list-style: none;
+}
+input, button{
+  border-radius: 5px;
+  border-width: 1px;
+  padding-left: 3px;
+  border-color: black;
+  font-family: VT323;
+  background-color: black;
+  color: green;
+  box-shadow: green;
+}
+
+input: focus{
+  box-shadow: green;
+}
